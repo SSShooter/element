@@ -309,7 +309,7 @@ export default {
         this.computePresentContent();
       }
     },
-    checkedValue(val) {
+    checkedValue(val, oldval) {
       const { value, dropDownVisible } = this;
       const { checkStrictly, multiple } = this.config;
 
@@ -321,7 +321,7 @@ export default {
         }
 
         this.$emit('input', val);
-        this.$emit('change', val);
+        this.$emit('change', val, oldval);
         this.dispatch('ElFormItem', 'el.form.change', [val]);
       }
     },
