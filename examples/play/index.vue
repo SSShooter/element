@@ -1,11 +1,6 @@
 <template>
   <div style="margin: 20px;">
-    <el-input v-model="input" placeholder="请输入内容"></el-input>
-    <el-cascader
-      v-model="input"
-      :options="[{ value: 111 }, { value: 1222 }]"
-      @change="handleChange"
-    ></el-cascader>
+    <el-input readonly v-model="input" placeholder="请输入内容"></el-input>
   </div>
 </template>
 

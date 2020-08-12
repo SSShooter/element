@@ -15,7 +15,8 @@
     @mouseenter="hovering = true"
     @mouseleave="hovering = false"
   >
-    <template v-if="type !== 'textarea'">
+    <div v-if="readonly">{{value}}</div>
+    <template v-else-if="type !== 'textarea'">
       <!-- 前置元素 -->
       <div class="el-input-group__prepend" v-if="$slots.prepend">
         <slot name="prepend"></slot>
