@@ -652,7 +652,7 @@
           // if (!this.$refs.reference) return;
           let inputChildNodes = this.$refs.reference.$el.childNodes;
           let input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0];
-          // if (!input) return;
+          if (!input) return;
           const tags = this.$refs.tags;
           const sizeInMap = this.initialInputHeight || 40;
           input.style.height = this.selected.length === 0
