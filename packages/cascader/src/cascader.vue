@@ -1,5 +1,13 @@
 <template>
+  <div>
+  <div>
+    <div v-if="readonly">
+      <span v-if="value">{{value}}</span>
+      <span class="el-nodata" v-else>{{nodata || '暂无数据'}}</span>
+    </div>
+  </div>
   <div
+    v-show="!readonly"
     ref="reference"
     :class="[
       'el-cascader',
@@ -9,7 +17,7 @@
     v-clickoutside="() => toggleDropDownVisible(false)"
     @mouseenter="inputHover = true"
     @mouseleave="inputHover = false"
-    @click="() => toggleDropDownVisible(readonly ? undefined : true)"
+    @click="() => toggleDropDownVisible(readonly2 ? undefined : true)"
     @keydown="handleKeyDown">
 
     <el-input
@@ -17,7 +25,7 @@
       v-model="multiple ? presentText : inputValue"
       :size="realSize"
       :placeholder="placeholder"
-      :readonly="readonly"
+      :readonly2="readonly2"
       :disabled="isDisabled"
       :validate-event="false"
       :class="{ 'is-focus': dropDownVisible }"
@@ -108,7 +116,7 @@
         </el-scrollbar>
       </div>
     </transition>
-  </div>
+  </div></div>
 </template>
 
 <script>
@@ -196,6 +204,8 @@ export default {
   },
 
   props: {
+    readonly: Boolean,
+    nodata: String,
     value: {},
     options: Array,
     props: Object,
@@ -282,7 +292,7 @@ export default {
     leafOnly() {
       return !this.config.checkStrictly;
     },
-    readonly() {
+    readonly2() {
       return !this.filterable || this.multiple;
     },
     clearBtnVisible() {

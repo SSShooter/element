@@ -150,13 +150,13 @@
     },
 
     props: {
+      readonly: Boolean,
       nodata: String,
       value: [String, Number],
       size: String,
       resize: String,
       form: String,
       disabled: Boolean,
-      readonly: Boolean,
       type: {
         type: String,
         default: 'text'
