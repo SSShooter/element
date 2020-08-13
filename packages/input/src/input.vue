@@ -15,7 +15,10 @@
     @mouseenter="hovering = true"
     @mouseleave="hovering = false"
   >
-    <div v-if="readonly">{{value}}</div>
+    <div v-if="readonly">
+      <span v-if="value">{{value}}</span>
+      <span class="el-nodata" v-else>{{nodata || '暂无数据'}}</span>
+    </div>
     <template v-else-if="type !== 'textarea'">
       <!-- 前置元素 -->
       <div class="el-input-group__prepend" v-if="$slots.prepend">
@@ -144,6 +147,7 @@
     },
 
     props: {
+      nodata: String,
       value: [String, Number],
       size: String,
       resize: String,
