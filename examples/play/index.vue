@@ -5,7 +5,13 @@
     <el-select :readonly="readonly" v-model="value" @change="handleChange" placeholder="请选择">
       <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
     </el-select>
-    <el-date-picker :readonly="readonly" v-model="value1" type="date" placeholder="选择日期"></el-date-picker>
+    <el-date-picker
+      :readonly="readonly"
+      v-model="value1"
+      type="date"
+      placeholder="选择日期"
+      value-format="yyyy-MM-dd"
+    ></el-date-picker>
   </div>
 </template>
 

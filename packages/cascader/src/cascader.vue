@@ -2,7 +2,7 @@
   <div>
   <div>
     <div v-if="readonly">
-      <span v-if="value">{{value}}</span>
+      <span v-if="multiple ? presentText : inputValue">{{multiple ? presentText : inputValue}}</span>
       <span class="el-nodata" v-else>{{nodata || '暂无数据'}}</span>
     </div>
   </div>
