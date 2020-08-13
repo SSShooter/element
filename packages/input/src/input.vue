@@ -19,7 +19,8 @@
       <span v-if="value">{{value}}</span>
       <span class="el-nodata" v-else>{{nodata || '暂无数据'}}</span>
     </div>
-    <template v-else-if="type !== 'textarea'">
+    <div v-show="!readonly">
+    <template v-if="type !== 'textarea'">
       <!-- 前置元素 -->
       <div class="el-input-group__prepend" v-if="$slots.prepend">
         <slot name="prepend"></slot>
@@ -110,6 +111,7 @@
     >
     </textarea>
     <span v-if="isWordLimitVisible && type === 'textarea'" class="el-input__count">{{ textLength }}/{{ upperLimit }}</span>
+    </div>
   </div>
 </template>
 <script>

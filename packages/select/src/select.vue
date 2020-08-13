@@ -4,6 +4,10 @@
     :class="[selectSize ? 'el-select--' + selectSize : '']"
     @click.stop="toggleMenu"
     v-clickoutside="handleClose">
+    <span v-if="readonly">
+      <span v-if="selectedLabel">{{selectedLabel}}</span>
+      <span class="el-nodata" v-else>{{nodata || '暂无数据'}}</span></span>
+    <div v-show="!readonly">
     <div
       class="el-select__tags"
       v-if="multiple"
@@ -77,7 +81,7 @@
       :autocomplete="autoComplete || autocomplete"
       :size="selectSize"
       :disabled="selectDisabled"
-      :readonly="readonly"
+      :readonly2="readonly2"
       :validate-event="false"
       :class="{ 'is-focus': visible }"
       :tabindex="(multiple && filterable) ? '-1' : null"
@@ -129,7 +133,7 @@
           </p>
         </template>
       </el-select-menu>
-    </transition>
+    </transition></div>
   </div>
 </template>
 
@@ -179,7 +183,7 @@
         return (this.elFormItem || {}).elFormItemSize;
       },
 
-      readonly() {
+      readonly2() {
         return !this.filterable || this.multiple || (!isIE() && !isEdge() && !this.visible);
       },
 
@@ -249,6 +253,8 @@
     directives: { Clickoutside },
 
     props: {
+      nodata: String,
+      readonly: Boolean,
       name: String,
       id: String,
       value: {
@@ -504,7 +510,7 @@
 
       emitChange(val) {
         if (!valueEquals(this.value, val)) {
-          this.$emit('change', val);
+          this.$emit('change', val, this.value);
         }
       },
 
