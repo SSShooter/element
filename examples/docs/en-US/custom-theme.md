@@ -21,7 +21,7 @@ The above website enables you to preview theme of a new theme color in real-time
 $--color-primary: teal;
 
 /* icon font path, required */
-$--font-path: '~element-ui/lib/theme-chalk/fonts';
+$--font-path: '~eeelement-ui/lib/theme-chalk/fonts';
 
 @import "~element-ui/packages/theme-chalk/src/index";
 ```

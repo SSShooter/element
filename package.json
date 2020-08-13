@@ -1,6 +1,6 @@
 {
   "name": "eeelement-ui",
-  "version": "2.13.2-beta.6",
+  "version": "2.13.2-beta.7",
   "description": "A Component Library for Vue.js.",
   "main": "lib/element-ui.common.js",
   "files": [

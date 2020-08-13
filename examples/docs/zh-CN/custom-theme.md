@@ -20,7 +20,7 @@ Element 的 theme-chalk 使用 SCSS 编写，如果你的项目也使用了 SCSS
 $--color-primary: teal;
 
 /* 改变 icon 字体路径变量，必需 */
-$--font-path: '~element-ui/lib/theme-chalk/fonts';
+$--font-path: '~eeelement-ui/lib/theme-chalk/fonts';
 
 @import "~element-ui/packages/theme-chalk/src/index";
 ```

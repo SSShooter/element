@@ -21,7 +21,7 @@ Este sitio, le permitirá obtener una vista previa del tema con un nuevo color e
 $--color-primary: teal;
 
 /* Ubicación de la fuente, obligatoria */
-$--font-path: '~element-ui/lib/theme-chalk/fonts';
+$--font-path: '~eeelement-ui/lib/theme-chalk/fonts';
 
 @import "~element-ui/packages/theme-chalk/src/index";
 ```
