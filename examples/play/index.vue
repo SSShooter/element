@@ -1,6 +1,7 @@
 <template>
   <div style="margin: 20px;">
-    <el-input readonly v-model="input" placeholder="请输入内容"></el-input>
+    <el-button @click="readonly = !readonly">toggle</el-button>
+    <el-input :readonly="readonly" v-model="input" placeholder="请输入内容"></el-input>
   </div>
 </template>
 
@@ -8,7 +9,8 @@
 export default {
   data() {
     return {
-      input: ""
+      input: "",
+      readonly: true
     };
   },
   methods: {
