@@ -1,13 +1,14 @@
 <template>
   <div
     class="el-select"
-    :class="[selectSize ? 'el-select--' + selectSize : '']"
+    :class="[selectSize ? 'el-select--' + selectSize : '']">
+  <span v-if="readonly">
+    <span v-if="selectedLabel">{{selectedLabel}}</span>
+    <span class="el-nodata" v-else>{{nodata || '暂无数据'}}</span></span>
+  <div
+    v-show="!readonly"
     @click.stop="toggleMenu"
     v-clickoutside="handleClose">
-    <span v-if="readonly">
-      <span v-if="selectedLabel">{{selectedLabel}}</span>
-      <span class="el-nodata" v-else>{{nodata || '暂无数据'}}</span></span>
-    <div v-show="!readonly">
     <div
       class="el-select__tags"
       v-if="multiple"
@@ -133,7 +134,8 @@
           </p>
         </template>
       </el-select-menu>
-    </transition></div>
+    </transition>
+  </div>
   </div>
 </template>
 
