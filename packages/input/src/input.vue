@@ -16,7 +16,8 @@
     @mouseleave="hovering = false"
   >
     <div v-if="readonly">
-      <span v-if="value">{{value}}</span>
+      <pre v-if="type === 'textarea'">{{value}}</pre>
+      <span v-else-if="value">{{value}}</span>
       <span class="el-nodata" v-else>{{nodata || '暂无数据'}}</span>
     </div>
     <div v-show="!readonly">
