@@ -652,8 +652,11 @@
         if (this.collapseTags && !this.filterable) return;
         this.$nextTick(() => {
           // if (!this.$refs.reference) return;
+          // debugger
           let inputChildNodes = this.$refs.reference.$el.childNodes;
-          let input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0];
+          // let input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0];
+          let input = [].filter.call(inputChildNodes, item => item.tagName === 'DIV')[0];
+          input = input.firstElementChild
           if (!input) return;
           const tags = this.$refs.tags;
           const sizeInMap = this.initialInputHeight || 40;

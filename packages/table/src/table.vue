@@ -444,6 +444,7 @@
       },
 
       resizeListener() {
+        // mark
         if (!this.$ready) return;
         let shouldUpdateLayout = false;
         const el = this.$el;
@@ -462,6 +463,7 @@
         if (shouldUpdateLayout) {
           this.resizeState.width = width;
           this.resizeState.height = height;
+          // mark
           this.doLayout();
         }
       },
@@ -470,6 +472,7 @@
         if (this.shouldUpdateHeight) {
           this.layout.updateElsHeight();
         }
+        // mark
         this.layout.updateColumnsWidth();
       },
 
