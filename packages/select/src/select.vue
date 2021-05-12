@@ -660,12 +660,15 @@
           if (!input) return;
           const tags = this.$refs.tags;
           const sizeInMap = this.initialInputHeight || 40;
-          input.style.height = this.selected.length === 0
+          const newHeight = this.selected.length === 0
             ? sizeInMap + 'px'
             : Math.max(
               tags ? (tags.clientHeight + (tags.clientHeight > sizeInMap ? 6 : 0)) : 0,
               sizeInMap
             ) + 'px';
+          if (Math.abs(parseInt(input.style.height || 0, 10) - parseInt(newHeight || 0, 10)) > 1) {
+            input.style.height = newHeight;
+          }
           if (this.visible && this.emptyText !== false) {
             this.broadcast('ElSelectDropdown', 'updatePopper');
           }
