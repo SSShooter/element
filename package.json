@@ -1,6 +1,6 @@
 {
   "name": "eeelement-ui",
-  "version": "2.13.7",
+  "version": "2.13.8",
   "description": "A Component Library for Vue.js.",
   "main": "lib/element-ui.common.js",
   "files": [
@@ -46,7 +46,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:ElemeFE/element.git"
+    "url": "git@github.com:SSShooter/element.git"
   },
   "homepage": "http://element.eleme.io",
   "keywords": [
@@ -56,7 +56,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ElemeFE/element/issues"
+    "url": "https://github.com/SSShooter/element/issues"
   },
   "unpkg": "lib/index.js",
   "style": "lib/theme-chalk/index.css",
